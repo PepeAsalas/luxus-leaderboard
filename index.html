@@ -4,42 +4,120 @@
   <meta charset="UTF-8" />
   <title>Luxus Capital Leaderboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
-      font-family: system-ui, Arial, sans-serif;
-      background: #0a0f1f;
-      color: #fafafa;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1e293b 0, #020617 55%, #000 100%);
+      color: #e5e7eb;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .wrapper {
+      max-width: 1100px;
+      width: 100%;
+    }
+    .card {
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 20px;
+      padding: 24px 24px 16px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      backdrop-filter: blur(12px);
+    }
+    .title {
       text-align: center;
-      padding: 20px;
+      margin: 0 0 4px;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
     }
-    h1 {
-      margin-bottom: 8px;
-      font-size: 2rem;
-      font-weight: 700;
+    .subtitle {
+      text-align: center;
+      margin: 0 0 18px;
+      font-size: 0.9rem;
+      color: #9ca3af;
     }
-    p {
-      margin-top: 0;
-      color: #d0d0d0;
-      margin-bottom: 20px;
+    .badge-row {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+    .badge {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(250, 204, 21, 0.4);
+      color: #facc15;
+      background: rgba(24, 24, 27, 0.7);
+    }
+    .iframe-wrapper {
+      border-radius: 12px;
+      overflow: hidden;
+      background: #0b1120;
+      border: 1px solid rgba(55, 65, 81, 0.7);
     }
     iframe {
       width: 100%;
-      height: 80vh;
+      height: 72vh;
       border: none;
-      border-radius: 12px;
       background: #ffffff;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    }
+    .footer {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 0.75rem;
+      color: #6b7280;
+    }
+    .footer span {
+      color: #facc15;
+      font-weight: 600;
+    }
+    @media (max-width: 640px) {
+      .card {
+        padding: 16px;
+      }
+      iframe {
+        height: 65vh;
+      }
     }
   </style>
 </head>
 <body>
+  <div class="wrapper">
+    <div class="card">
+      <h1 class="title">Luxus Capital Leaderboard</h1>
+      <p class="subtitle">Best Student Investor Competition · Live rankings updated automatically</p>
 
-<h1>Luxus Capital Leaderboard</h1>
-<p>Best Student Investor Competition. Live rankings updated automatically.</p>
+      <div class="badge-row">
+        <div class="badge">Return vs Risk</div>
+        <div class="badge">Pitch · Discipline · SMITSE</div>
+        <div class="badge">Season 2025/2026</div>
+      </div>
 
-<!-- 👇 Pega aquí tu iframe de Google Sheets -->
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSznennrC0mnIfPUtRQrOYXaQUFnvdqXDrcSR-ik4iRcPA-PYldqjKR3hGGsRRfEps-3P514d57Tv5v/pubhtml?gid=673626167&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+      <div class="iframe-wrapper">
+        <!-- 👇 DEJA SOLO TU IFRAME AQUÍ -->
+      <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSznennrC0mnIfPUtRQrOYXaQUFnvdqXDrcSR-ik4iRcPA-PYldqjKR3hGGsRRfEps-3P514d57Tv5v/pubhtml?gid=673626167&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+      </div>
 
+      <div class="footer">
+        Built for <span>Luxus Capital Fund</span> · Data synced from Google Sheets.
+      </div>
+    </div>
+  </div>
 </body>
 </html>
+
